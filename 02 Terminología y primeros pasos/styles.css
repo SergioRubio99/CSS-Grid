@@ -1,6 +1,9 @@
 main {
     height: 100vh;
     display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(3, 100px);
 }
 
 div {
@@ -8,4 +11,22 @@ div {
     justify-content: center;
     align-items: center;
     background-color: goldenrod;
+    transition: 450ms;
+}
+
+@media (max-width: 600px) {
+    div:nth-child(10) {
+        background-color: rgb(251, 133, 251);
+        /* grid-column-start: 3;
+        grid-column-end: 5; */
+        /*Short form:*/
+        grid-column: 3 / 5;
+    }
+    div:nth-child(6) {
+        background-color: rebeccapurple;
+        grid-column: 2 / 3;
+        grid-row: 2 /4;
+        /*Another way of telling the element how many slots it can take:*/
+        grid-row: span 2;
+    }
 }
