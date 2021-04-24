@@ -1,0 +1,13 @@
+main {
+    display: grid;
+    grid-gap:10px;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+div {
+    background-color: goldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
