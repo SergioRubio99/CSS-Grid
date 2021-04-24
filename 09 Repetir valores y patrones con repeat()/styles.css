@@ -27,7 +27,7 @@ div {
 }
 
 div:first-of-type {
-    background-color: lightcoral;
+    background-color: rgb(84, 160, 231);
     color: white;
     grid-column: col-lg-start / end;
 }
