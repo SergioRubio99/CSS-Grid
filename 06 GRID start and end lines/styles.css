@@ -3,6 +3,8 @@ main {
     height: 100vh;
     grid-gap: 10px;
     font-family: sans-serif;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
 }
 
 main > * {
@@ -10,4 +12,11 @@ main > * {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 500px){
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(5, 1fr);
+    }
 }
