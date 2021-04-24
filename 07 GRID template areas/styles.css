@@ -1,0 +1,61 @@
+main {
+    display: grid;
+    font-family: sans-serif;
+    height: 100vh;
+    grid-gap: 10px;
+
+
+    /* Especificar posición de las áreas */
+    grid-template-areas:
+        "header"
+        "content"
+        "left"
+        "right"
+        "footer"
+    
+}
+
+main > * {
+    background-color: goldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Responsive */
+
+@media (min-width:500px){
+    main{
+        grid-template-areas:
+            "header header right"
+            "left content right"
+            "left footer right";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 3fr 5fr 2fr;
+    }
+    
+
+}
+
+/* Nombrar las areas */
+
+header {
+    grid-area: header;
+}
+
+aside:first-of-type {
+    grid-area: left;
+}
+
+article {
+    grid-area: content;
+}
+
+aside:last-of-type{
+    grid-area: right;
+}
+
+footer{
+    grid-area: footer;
+}
