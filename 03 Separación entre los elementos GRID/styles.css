@@ -1,11 +1,19 @@
 main {
     height: 100vh;
+    display: grid;
+    grid-gap: 30px 10px;
+    /* grid-row-gap: 10px;
+    grid-column-gap: 10px; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /*Implicit grid*/
+    grid-auto-rows: 1fr;
 }
 
 div {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: purple;
-    color: white;
+    background-color: rgb(236, 176, 24);
+    color: rgb(0, 0, 0);
 }
