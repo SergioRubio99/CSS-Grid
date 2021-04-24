@@ -3,8 +3,20 @@ main {
     height: 100vh;
     grid-gap: 10px;
     /* grid-template-columns: 1fr 2fr; */
-    grid-template-columns: [sidebar-start] 1fr [content-start] 2fr;
-    grid-template-rows: [header-start] 1fr, [content-start] 2fr, [footer-start] 1fr;
+    grid-template-columns:
+    
+    /*Señalamos cada 'end' para ser más explícitos luego determinando hasta donde abarca cada elemento*/
+
+    [sidebar-start] 1fr 
+    [sidebar-end content-start] 2fr 
+    [contenido-end];
+    
+    grid-template-rows: 
+    
+    [header-start] 1fr
+    [header-end content-start] 2fr 
+    [footer-start] 1fr
+    [footer-end];
 }
 
 main>* {
@@ -26,13 +38,13 @@ footer {
 } */
 
 header {
-    grid-column: sidebar-start / span 2;
+    grid-column: sidebar-start / content-end;
 }
 
 aside {
-    grid-row: content-start / span 2;
+    grid-row: header-end / footer-end ;
 }
 
 footer {
-    grid-column: content-start;
+    grid-column: content-start/ content-end;
 }
